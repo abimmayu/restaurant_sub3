@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/common/navigation_app.dart';
 import 'package:restaurant_app/common/styles_app.dart';
 import 'package:restaurant_app/data/model/restaurant_list_response.dart';
-import 'package:restaurant_app/ui/presentation/second_screen.dart';
+import 'package:restaurant_app/ui/presentation/detail_route.dart';
 
 class CardResult extends StatelessWidget {
   final Restaurant restaurants;

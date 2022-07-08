@@ -8,7 +8,6 @@ import 'package:restaurant_app/data/model/restaurant_list_response.dart';
 import 'package:rxdart/rxdart.dart';
 
 final selectNotificationSubject = BehaviorSubject<String>();
-final randomNumber = Random().nextInt(20);
 
 class NotificationHelper {
   static NotificationHelper? _instance;
@@ -40,9 +39,9 @@ class NotificationHelper {
   Future<void> showNotification(
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin,
       RestaurantResult restaurants) async {
+    final randomNumber = Random().nextInt(20);
     var _channelId = "1";
     var _channelName = "channel_01";
-    // var _channelDescription = "restaurant update channel";
 
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
         _channelId, _channelName,
@@ -65,6 +64,7 @@ class NotificationHelper {
   void configureSelectNotificationSubject(String route) {
     selectNotificationSubject.stream.listen((String payload) async {
       var data = RestaurantResult.fromJson(json.decode(payload));
+      final randomNumber = Random().nextInt(20);
       var restaurant = data.restaurants[randomNumber];
       Navigation.intentWithData(route, restaurant);
     });

@@ -5,6 +5,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/common/navigation_app.dart';
+import 'package:restaurant_app/common/styles_app.dart';
 import 'package:restaurant_app/data/api/api.dart';
 import 'package:restaurant_app/data/database/database_helper.dart';
 import 'package:restaurant_app/data/model/restaurant_list_response.dart';
@@ -13,7 +14,7 @@ import 'package:restaurant_app/provider/restaurant_provider.dart';
 import 'package:restaurant_app/provider/restaurant_search_provider.dart';
 import 'package:restaurant_app/ui/home_screen.dart';
 import 'package:restaurant_app/ui/presentation/search_screen.dart';
-import 'package:restaurant_app/ui/presentation/second_screen.dart';
+import 'package:restaurant_app/ui/presentation/detail_route.dart';
 import 'package:restaurant_app/ui/widgets/background.dart';
 import 'package:restaurant_app/ui/widgets/notification_helper.dart';
 
@@ -55,7 +56,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Restaurant Abim',
         navigatorKey: navigatorKey,
-        theme: ThemeData(),
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          scaffoldBackgroundColor: Colors.white,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: textTheme,
+          appBarTheme: AppBarTheme(titleTextStyle: textTheme.headline6),
+        ),
         home: const HomePage(),
         routes: {
           HomePage.routeName: (context) => const HomePage(),

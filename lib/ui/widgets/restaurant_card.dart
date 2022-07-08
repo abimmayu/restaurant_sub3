@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/restaurant_list_response.dart';
-import 'package:restaurant_app/ui/presentation/second_screen.dart';
+import 'package:restaurant_app/ui/presentation/detail_route.dart';
 
 class Cards extends StatelessWidget {
   final Restaurant restaurant;

@@ -5,7 +5,7 @@ import 'package:restaurant_app/provider/preference_provider.dart';
 import 'package:restaurant_app/provider/scheduling_provider.dart';
 import 'package:restaurant_app/ui/presentation/favorite_page.dart';
 import 'package:restaurant_app/ui/presentation/restaurant.dart';
-import 'package:restaurant_app/ui/presentation/second_screen.dart';
+import 'package:restaurant_app/ui/presentation/detail_route.dart';
 import 'package:restaurant_app/ui/presentation/setting_screen.dart';
 import 'package:restaurant_app/ui/widgets/notification_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
