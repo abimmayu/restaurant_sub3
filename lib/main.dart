@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Restaurant Mobile',
+        title: 'Restaurant Abim',
         navigatorKey: navigatorKey,
         theme: ThemeData(),
         home: const HomePage(),
