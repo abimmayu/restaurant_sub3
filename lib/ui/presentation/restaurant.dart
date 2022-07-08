@@ -19,7 +19,7 @@ class RestaurantPage extends StatelessWidget {
           if (value.resultState == ResultState.hasData) {
             return Scaffold(
               appBar: AppBar(
-                title: const Text('Restaurant'),
+                title: const Text('Restaurant Abim'),
                 actions: [
                   IconButton(
                     icon: const Icon(Icons.search),

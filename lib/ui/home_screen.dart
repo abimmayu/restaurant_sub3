@@ -12,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-  static const String routeName = '/second_screen';
+  static const String routeName = '/home_screen';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -21,8 +21,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _bottomNavIndex = 0;
   static const String _home = 'Home';
-  static const String _bookmarks = 'Home';
-  static const String _settings = 'Home';
+  static const String _favorite = 'Favorite';
+  static const String _settings = 'Settings';
 
   final NotificationHelper _notificationHelper = NotificationHelper();
 
@@ -51,8 +51,8 @@ class _HomePageState extends State<HomePage> {
       label: _home,
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.bookmarks),
-      label: _bookmarks,
+      icon: Icon(Icons.favorite),
+      label: _favorite,
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.settings),

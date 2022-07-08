@@ -51,7 +51,7 @@ class Cards extends StatelessWidget {
                           Icons.star,
                           size: 14,
                           color: Colors.yellow,
-                        )
+                        ),
                       ],
                     ),
                   ],

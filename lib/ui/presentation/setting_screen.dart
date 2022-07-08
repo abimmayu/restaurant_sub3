@@ -10,13 +10,13 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Setting'),
+          title: const Text('Settings'),
         ),
         body: Consumer<PreferencesProvider>(
           builder: (context, provider, child) {
             return Material(
               child: ListTile(
-                title: const Text('Scheduling News'),
+                title: const Text('Scheduling The News'),
                 trailing: Consumer<SchedulingProvider>(
                   builder: (context, scheduled, _) {
                     return Switch.adaptive(

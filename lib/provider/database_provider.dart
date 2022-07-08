@@ -39,7 +39,7 @@ class DatabaseProvider extends ChangeNotifier {
     }
   }
 
-  Future<bool> isBookmarked(String id) async {
+  Future<bool> isFavorite(String id) async {
     final bookmarkedRestaurant = await databaseHelper.getRestaurantById(id);
     return bookmarkedRestaurant.isNotEmpty;
   }

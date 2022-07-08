@@ -11,7 +11,7 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bookmarks'),
+        title: const Text('Favorite'),
       ),
       body: Consumer<DatabaseProvider>(
         builder: (context, provider, child) {

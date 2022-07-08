@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:restaurant_app/common/styles_app.dart';
-import 'package:restaurant_app/data/database/convert_data.dart';
 import 'package:restaurant_app/data/model/restaurant_detail_response.dart';
-import 'package:restaurant_app/provider/database_provider.dart';
+import 'package:restaurant_app/ui/widgets/favorite_button.dart';
 
 class DetailScreen extends StatelessWidget {
   final String _urlPicture =
@@ -89,60 +87,7 @@ class DetailScreen extends StatelessWidget {
                               )
                             ],
                           ),
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                color: colorPrimary.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Consumer<DatabaseProvider>(
-                              builder: (context, value, child) {
-                                return FutureBuilder<bool>(
-                                  future: value.isBookmarked(restaurants.id),
-                                  builder: (context, snapshot) {
-                                    var isBookmarked = snapshot.data ?? false;
-                                    return isBookmarked
-                                        ? Container(
-                                            height: 40,
-                                            width: 40,
-                                            decoration: BoxDecoration(
-                                                color:
-                                                    colorGrey.withOpacity(0.8),
-                                                borderRadius:
-                                                    BorderRadius.circular(8)),
-                                            child: IconButton(
-                                              icon: const Icon(
-                                                Icons.favorite,
-                                                color: Colors.pink,
-                                              ),
-                                              onPressed: () =>
-                                                  value.removeRestaurant(
-                                                      restaurants.id),
-                                            ),
-                                          )
-                                        : IconButton(
-                                            icon: Container(
-                                              height: 40,
-                                              width: 40,
-                                              decoration: BoxDecoration(
-                                                  color: colorGrey
-                                                      .withOpacity(0.8),
-                                                  borderRadius:
-                                                      BorderRadius.circular(8)),
-                                              child: const Icon(
-                                                Icons.favorite_border,
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                            onPressed: () =>
-                                                value.addRestaurant(
-                                                    convertData(restaurants)),
-                                          );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
+                          FavoriteButton(restaurants: restaurants),
                         ],
                       ),
                     ),
